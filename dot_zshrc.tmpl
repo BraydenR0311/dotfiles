@@ -111,13 +111,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sudo='sudo '
-
 {{- if eq .chezmoi.osRelease.id "arch" }}
 alias vi='/usr/bin/nvim'
-{{ else }}
+{{- else }}
 alias vi='/snap/bin/nvim'
-{{ end }}
-
+{{- end }}
 alias bcon='bluetoothctl connect 04:9D:05:E4:EB:56'
 alias bdis='bluetoothctl disconnect'
 alias open='xdg-open'
