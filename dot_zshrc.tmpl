@@ -106,16 +106,19 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-#
+
+# Conditional path based on home vs work.
+{{- if eq .chezmoi.osRelease.id "arch" }}
+NVIM_PATH="/usr/bin/nvim"
+{{- else }}
+NVIM_PATH="/snap/bin/nvim"
+{{- end }}
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sudo='sudo '
-{{- if eq .chezmoi.osRelease.id "arch" }}
-alias vi='/usr/bin/nvim'
-{{- else }}
-alias vi='/snap/bin/nvim'
-{{- end }}
+alias vi=${NVIM_PATH}
 alias bcon='bluetoothctl connect 04:9D:05:E4:EB:56'
 alias bdis='bluetoothctl disconnect'
 alias open='xdg-open'
@@ -164,25 +167,33 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
+autoload -U bashcompinit
+bashcompinit
 
 autoload -Uz compinit promptinit
 compinit
 promptinit
 
 zstyle ':completion:*' menu select
-# Change cursor on startup to blinking block.
-#echo '\e[1 q'
 
 
 # Created by `pipx` on 2025-04-16 19:13:34
 export PATH="$PATH:/home/brayden/.local/bin"
+{{- if eq .chezmoi.osRelease.id "arch" }}
 eval "$(register-python-argcomplete pipx)"
+{{- else }}
+eval "$(register-python-argcomplete3 pipx)"
+{{- end }}
 
 #Virtualenvwrapper stuff.
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/projects/
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+{{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/bin/virtualenvwrapper.sh
+{{- else }}
+source ~/.local/bin/virtualenvwrapper.sh
+{{- end }}
 
 # Should point to nvim not alias
-export EDITOR=/usr/bin/nvim
+export EDITOR=${NVIM_PATH}
