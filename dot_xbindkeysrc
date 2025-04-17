@@ -1,0 +1,23 @@
+# Increase volume.
+"changevol up"
+   XF86AudioRaiseVolume
+
+# Decrease volume.
+"changevol down"
+    XF86AudioLowerVolume
+
+# Increase brightness.
+"changebright up"
+    XF86MonBrightnessUp
+
+# Decrease brightness.
+"changebright down"
+    XF86MonBrightnessDown
+
+# Take screenshot selection.
+"maim -s | xclip -selection clipboard -t image/png"
+    mod1 + shift + s
+
+# Spawn firefox.
+"firefox"
+    mod1 + o
