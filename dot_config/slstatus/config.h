@@ -71,5 +71,5 @@ static const struct arg args[] = {
 	// { vol_perc, "  %s%% | ", "Master"},
 	{ run_command, "  %s | ", "pactl get-sink-volume @DEFAULT_SINK@ |"
 				     "grep -oP '\\d+%'"},
-	{ battery_perc, " %s%% ",	    "BAT0" }, 
+	// { battery_perc, " %s%% ",	    "BAT0" }, 
 };
