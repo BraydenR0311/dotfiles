@@ -73,7 +73,7 @@ static const struct arg args[] = {
 	  "pactl get-sink-volume @DEFAULT_SINK@ |"
 	  "grep -oP '\\d+%'"},
 	{{- if eq .chezmoi.hostname "mcdoobsLaptop" }}
-	{ battery_perc, " |  %s%% ",	    "BAT0" }, 
+	{ run_command, " | %s ",	    "~/Documents/scripts/bat.sh" }, 
 	{{- else }}
 	{{- end }}
 };
