@@ -137,6 +137,11 @@ ve () {
         return 1
     fi
 
+    if [[ $1 ]]; then
+        workon $1
+        return
+    fi
+
     PYTHON_VERSION=$(python --version | awk '{ print $2 }')
 
     if [[ $(lsvirtualenv | grep ${PYTHON_VERSION}) ]]; then
@@ -148,8 +153,8 @@ ve () {
 
 # Detect venv and if so, run ipython in interactive mode.
 ipy () {
-    if [[ -z $VIRTUAL_ENV ]]
-    then
+    if [[ -z $VIRTUAL_ENV ]]; then
+        echo 'Activating virual environment.'
         ve 
     fi
     ipython -i
