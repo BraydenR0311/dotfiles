@@ -17,3 +17,9 @@ My multi-system work and home Linux configuration files managed with  [chezmoi](
 - text editor/IDE: [Neovim (kickstart)](https://github.com/nvim-lua/kickstart.nvim)
 - vector art: [inkscape](https://inkscape.org)
 - photoviewing: [feh](https://feh.finalrewind.org)
+
+## Favorite python stuff
+- [Pygame-ce](https://pyga.me/)
+- [PyTorch](https://pytorch.org/)
+- [Ruff](https://docs.astral.sh/ruff/)
+- [cookiecutter-data-science](https://cookiecutter-data-science.drivendata.org/)
