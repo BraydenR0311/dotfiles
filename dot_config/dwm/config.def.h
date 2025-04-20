@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 30;
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim        = ";";       /* Character used for separating status */
-static const char *fonts[]          = { "TerminessNerdFont:size=12" };
+static const char *fonts[]          = { "TerminessNerdFont:size=16" };
 
 static const char dmenufont[]       = "TerminessNerdFont:size=12";
 static const char col_gray1[]       = "#222222";
