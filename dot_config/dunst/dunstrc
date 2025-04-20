@@ -25,10 +25,11 @@
     text_icon_padding = 0
     frame_width = 2
     frame_color = "#bdae93"
+	background = "222222"
     gap_size = 0
     separator_color = frame
     sort = yes
-    font = JetBrainsMonoNerdFont 8
+    font = JetBrainsMonoNerdFont 12
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
