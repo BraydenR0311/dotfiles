@@ -29,7 +29,7 @@
     gap_size = 0
     separator_color = frame
     sort = yes
-    font = JetBrainsMonoNerdFont 12
+    font = TerminessNerdFont 12
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
@@ -84,12 +84,12 @@
     default_icon = dialog-warning
 [volume]
     appname = "changevol"
-    format = "<span font='JetBrainsMonoNerdFont 15' foreground='#bdae93'>%s</span>"
+    format = "<span font='TerminessNerdFont 15' foreground='#bdae93'>%s</span>"
     alignment = center
     icon_position = off
 
 [brightness]
     appname = "changebright"
-    format = "<span font='JetBrainsMonoNerdFont 15' foreground='#bdae93'>%s</span>"
+    format = "<span font='TerminessNerdFont 15' foreground='#bdae93'>%s</span>"
     alignment = center
     icon_position = off
