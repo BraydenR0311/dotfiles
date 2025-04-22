@@ -779,7 +779,7 @@ require("lazy").setup({
       formatters_by_ft = {
         -- lua = { "stylua" },
         -- Conform can also run multiple formatters sequentially
-        python = { "ruff_fix", "ruff_format" },
+        python = { "ruff_format" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -1100,15 +1100,4 @@ vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
   callback = function()
     vim.opt.guicursor = "a:block-blinkwait700-blinkoff400-blinkon250-"
   end
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  buffer = buffer,
-  callback = function()
-    vim.lsp.buf.code_action({
-      context = { only = { "source.organizeImports" } },
-      apply = true,
-    })
-    vim.wait(100)
-  end,
 })
