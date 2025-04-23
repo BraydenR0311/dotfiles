@@ -46,14 +46,16 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	for f in "$xinitdir/xinitrc.d"/?*.sh ; do
 		[ -x "$f" ] && . "$f"
 	done
-	unset f
+	unset 
 fi
 
 SCRIPT_DIR=~/Documents/scripts/
 
 xbindkeys &
 # Disable touch screen.
+{{- if eq .chezmoi.hostname "mcdoobsLaptop" }}
 xinput disable 9 &
+{{- end }}
 # Start compositor for transparency and animations.
 picom &
 # Start status bar
