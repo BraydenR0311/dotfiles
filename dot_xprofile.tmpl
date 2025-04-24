@@ -52,10 +52,14 @@ fi
 SCRIPT_DIR=~/Documents/scripts/
 
 xbindkeys &
-xrandr --output DP-3 --mode 1440x900 --pos 1920x180 --output HDMI-0 --mode 1920x1080 --pos 0x0
+{{- if eq .chezmoi.hostname "mcdoobsDesktop" }}
+xrandr --output DP-3 --mode 1440x900 --pos 1920x180 --output HDMI-0 --mode 1920x1080 --pos 0x0 &
+{{- end }}
+{{- if eq .chezmoi.hostname "mcdoobsLaptop" }}
 # Disable touch screen.
+xinput disable 9 &
+{{- end }}
 # Start compositor for transparency and animations.
-
 picom &
 # Start status bar
 slstatus &
