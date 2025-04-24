@@ -52,8 +52,8 @@ fi
 SCRIPT_DIR=~/Documents/scripts/
 
 xbindkeys &
-# Disable touch screen.
 {{- if eq .chezmoi.hostname "mcdoobsLaptop" }}
+# Disable touch screen.
 xinput disable 9 &
 {{- end }}
 # Start compositor for transparency and animations.
