@@ -1,0 +1,12 @@
+Host github.com
+    ForwardX11 no
+
+Host 10.2.1.2
+  HostName 10.2.1.2
+  User brayden
+
+Host lambda
+	HostName 10.2.1.7
+	User brayden
+	LocalForward 8888 localhost:8888
+
