@@ -1101,3 +1101,5 @@ vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
     vim.opt.guicursor = "a:block-blinkwait700-blinkoff400-blinkon250-"
   end
 })
+
+vim.api.nvim_set_keymap("n", "<leader>rs", "<Cmd>IronAttach sh<CR>", {silent = true})
