@@ -823,6 +823,7 @@ require("lazy").setup({
       --  into multiple repos for maintenance purposes.
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function()
       -- See `:help cmp`
@@ -1103,3 +1104,4 @@ vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
 })
 
 vim.api.nvim_set_keymap("n", "<leader>rs", "<Cmd>IronAttach sh<CR>", {silent = true})
+vim.keymap.set("i", "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
