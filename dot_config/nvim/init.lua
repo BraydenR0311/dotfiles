@@ -1104,4 +1104,4 @@ vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
 })
 
 vim.api.nvim_set_keymap("n", "<leader>rs", "<Cmd>IronAttach sh<CR>", {silent = true})
-vim.keymap.set("i", "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
+vim.keymap.set("i", "<c-d>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
