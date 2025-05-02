@@ -192,7 +192,3 @@ source ~/.local/bin/virtualenvwrapper.sh
 
 # Should point to nvim not alias
 export EDITOR=${NVIM_PATH}
-
-if [[ -n $VIRTUAL_ENV ]]; then
-    PS1="($(basename $VIRTUAL_ENV)) $PS1"
-fi
