@@ -10,3 +10,14 @@ Host lambda
 	User brayden
 	LocalForward 8888 localhost:8888
 
+Host laptop
+	HostName 100.78.188.68
+	User brayden
+	
+Host server
+	HostName 100.74.128.49
+	User brayden
+
+Host desktop
+	HostName 100.115.163.90
+	User brayden
