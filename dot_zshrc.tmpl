@@ -172,8 +172,6 @@ promptinit
 zstyle ':completion:*' menu select
 
 
-# Created by `pipx` on 2025-04-16 19:13:34
-export PATH="$PATH:/home/brayden/.local/bin"
 {{- if eq .chezmoi.osRelease.id "arch" }}
 eval "$(register-python-argcomplete pipx)"
 {{- else }}
