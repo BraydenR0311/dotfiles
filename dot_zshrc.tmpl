@@ -152,7 +152,7 @@ ve () {
 # Detect venv and if so, run ipython in interactive mode.
 ipy () {
     if [[ -z $VIRTUAL_ENV ]]; then
-        echo 'Activating virual environment.'
+        echo "Activating virual environment."
         ve 
     fi
     ipython -i

@@ -49,7 +49,7 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset 
 fi
 
-SCRIPT_DIR=~/.local/bin
+SCRIPT_DIR=$HOME/.local/bin
 
 xbindkeys &
 {{- if eq .chezmoi.hostname "mcdoobsLaptop" }}
