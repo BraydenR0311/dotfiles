@@ -50,6 +50,7 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 fi
 
 SCRIPT_DIR=$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH
 
 xbindkeys &
 {{- if eq .chezmoi.hostname "mcdoobsDesktop" }}
