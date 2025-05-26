@@ -172,7 +172,7 @@ promptinit
 zstyle ':completion:*' menu select
 
 
-{{- if eq .chezmoi.osRelease.id "arch" }}
+{{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server")) }}
 eval "$(register-python-argcomplete pipx)"
 {{- else }}
 eval "$(register-python-argcomplete3 pipx)"
@@ -184,6 +184,8 @@ export PROJECT_HOME=$HOME/Documents/projects/
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 {{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/bin/virtualenvwrapper.sh
+{{- else if eq .chezmoi.hostname "mcdoobs-server" }}
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 {{- else }}
 source ~/.local/bin/virtualenvwrapper.sh
 {{- end }}
