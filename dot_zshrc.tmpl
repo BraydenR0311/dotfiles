@@ -174,10 +174,18 @@ promptinit
 zstyle ':completion:*' menu select
 
 
+<<<<<<< Updated upstream
 {{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
 eval "$(register-python-argcomplete pipx)"
 {{- else }}
+=======
+# Created by `pipx` on 2025-04-16 19:13:34
+export PATH="$PATH:/home/brayden/.local/bin"
+{{- if eq .chezmoi.hostname "Lambda-Vector" }}
+>>>>>>> Stashed changes
 eval "$(register-python-argcomplete3 pipx)"
+{{- else }}
+eval "$(register-python-argcomplete pipx)"
 {{- end }}
 
 #Virtualenvwrapper stuff.
