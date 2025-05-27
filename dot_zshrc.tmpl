@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Download oh-my-zsh if it doesn't exist.
 if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
@@ -110,6 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # Conditional path based on home vs work.
 {{- if eq .chezmoi.osRelease.id "arch" }}
 NVIM_PATH="/usr/bin/nvim"
+{{- else if eq .chezmoi.hostname "george" }}
+NVIM_PATH="/usr/local/bin/nvim"
 {{- else }}
 NVIM_PATH="/snap/bin/nvim"
 {{- end }}
@@ -172,7 +174,7 @@ promptinit
 zstyle ':completion:*' menu select
 
 
-{{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server")) }}
+{{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
 eval "$(register-python-argcomplete pipx)"
 {{- else }}
 eval "$(register-python-argcomplete3 pipx)"
@@ -184,7 +186,7 @@ export PROJECT_HOME=$HOME/Documents/projects/
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 {{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/bin/virtualenvwrapper.sh
-{{- else if eq .chezmoi.hostname "mcdoobs-server" }}
+{{- else if (or (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 {{- else }}
 source ~/.local/bin/virtualenvwrapper.sh
