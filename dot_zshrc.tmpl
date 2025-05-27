@@ -152,7 +152,7 @@ ve () {
 # Detect venv and if so, run ipython in interactive mode.
 ipy () {
     if [[ -z $VIRTUAL_ENV ]]; then
-        echo 'Activating virual environment.'
+        echo "Activating virual environment."
         ve 
     fi
     ipython -i
@@ -172,9 +172,7 @@ promptinit
 zstyle ':completion:*' menu select
 
 
-# Created by `pipx` on 2025-04-16 19:13:34
-export PATH="$PATH:/home/brayden/.local/bin"
-{{- if eq .chezmoi.osRelease.id "arch" }}
+{{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server")) }}
 eval "$(register-python-argcomplete pipx)"
 {{- else }}
 eval "$(register-python-argcomplete3 pipx)"
@@ -186,6 +184,8 @@ export PROJECT_HOME=$HOME/Documents/projects/
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 {{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/bin/virtualenvwrapper.sh
+{{- else if eq .chezmoi.hostname "mcdoobs-server" }}
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 {{- else }}
 source ~/.local/bin/virtualenvwrapper.sh
 {{- end }}

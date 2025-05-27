@@ -72,8 +72,8 @@ static const struct arg args[] = {
 	{ run_command, " |   %s",
 	  "pactl get-sink-volume @DEFAULT_SINK@ |"
 	  "grep -oP '\\d+%'"},
-	{{- if eq .chezmoi.hostname "mcdoobsLaptop" }}
-	{ run_command, " | %s ",	    "~/Documents/scripts/bat.sh" }, 
+	{{- if eq .chezmoi.hostname "mcdoobs-laptop" }}
+	{ run_command, " | %s ",	    "$HOME/.local/bin/bat.sh" }, 
 	{{- else }}
 	{{- end }}
 };

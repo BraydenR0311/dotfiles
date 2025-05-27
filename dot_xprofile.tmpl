@@ -49,7 +49,8 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset 
 fi
 
-SCRIPT_DIR=~/Documents/scripts/
+SCRIPT_DIR=$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH
 
 xbindkeys &
 {{- if eq .chezmoi.hostname "mcdoobsDesktop" }}

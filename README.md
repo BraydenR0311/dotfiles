@@ -9,6 +9,7 @@ My multi-system work and home Linux configuration files managed with  [chezmoi](
 - shell: [zsh](https://www.zsh.org)
 - dotfile manager: [chezmoi](https://www.chezmoi.io)
 - file sync: [syncthing](https://syncthing.net)
+- backups: [borgbackup](https://borgbackup.readthedocs.io/en/stable/)
 - window system: [xorg](https://www.x.org)
 - tiling window manager: [dwm](https://dwm.suckless.org)
 - terminal: [st](https://st.suckless.org)
