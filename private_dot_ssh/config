@@ -5,6 +5,10 @@ Host 10.2.1.2
   HostName 10.2.1.2
   User brayden
 
+Host george
+  HostName 10.2.1.3
+  User brayden
+
 Host lambda
 	HostName 10.2.1.7
 	User brayden
