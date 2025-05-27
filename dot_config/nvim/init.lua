@@ -695,28 +695,28 @@ require("lazy").setup({
 				-- ts_ls = {},
 				--
 
-				-- lua_ls = {
-				--   -- cmd = { ... },
-				--   -- filetypes = { ... },
-				--   -- capabilities = {},
-				--   settings = {
-				--     Lua = {
-				--       format = {
-				--         enable = false,
-				--         defaultConfig = {
-				--           indent_style = "space",
-				--           indent_size = "2",
-				--         },
-				--       },
-				--
-				--       completion = {
-				--         callSnippet = "Replace",
-				--       },
-				--       -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-				--       diagnostics = { disable = { "missing-fields" } },
-				--     },
-				--   },
-				-- },
+				lua_ls = {
+					-- cmd = { ... },
+					-- filetypes = { ... },
+					-- capabilities = {},
+					settings = {
+						Lua = {
+							format = {
+								enable = false,
+								defaultConfig = {
+									indent_style = "space",
+									indent_size = "2",
+								},
+							},
+
+							completion = {
+								callSnippet = "Replace",
+							},
+							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+							diagnostics = { disable = { "missing-fields" } },
+						},
+					},
+				},
 			}
 
 			-- Ensure the servers and tools above are installed
