@@ -194,3 +194,7 @@ source ~/.local/bin/virtualenvwrapper.sh
 
 # Should point to nvim not alias
 export EDITOR=${NVIM_PATH}
+{{- if eq .chezmoi.hostname "george" }}
+export PATH="$PATH:/home/brayden/ngc-cli"
+{{- end }}
+
