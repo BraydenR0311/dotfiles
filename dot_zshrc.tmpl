@@ -178,8 +178,6 @@ zstyle ':completion:*' menu select
 eval "$(register-python-argcomplete pipx)"
 {{- else }}
 eval "$(register-python-argcomplete3 pipx)"
-{{- else }}
-eval "$(register-python-argcomplete pipx)"
 {{- end }}
 
 #Virtualenvwrapper stuff.
