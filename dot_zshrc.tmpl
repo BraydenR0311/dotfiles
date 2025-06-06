@@ -164,9 +164,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Virtualenvwrapper
-{{- if eq .chezmoi.osRelease.id "arch" }}
 export WORKON_HOME=~/.virtualenvs
+{{- if eq .chezmoi.osRelease.id "arch" }}
 source /usr/bin/virtualenvwrapper.sh
+{{- else if eq .chezmoi.osRelease.id "ubuntu" }}
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 {{- end }}
 
 
