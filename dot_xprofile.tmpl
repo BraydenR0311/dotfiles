@@ -52,6 +52,11 @@ fi
 SCRIPT_DIR=$HOME/.local/bin
 export PATH=$HOME/.local/bin:$PATH
 
+# Dark theme stuff
+export GTK_THEME=Adwaita:dark
+export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
+export QT_STYLE_OVERRIDE=Adwaita-Dark
+
 xbindkeys &
 {{- if eq .chezmoi.hostname "mcdoobsDesktop" }}
 xrandr --output DP-3 --mode 1440x900 --pos 1920x180 --output HDMI-0 --mode 1920x1080 --pos 0x0 &
