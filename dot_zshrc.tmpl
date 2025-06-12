@@ -180,17 +180,6 @@ eval "$(register-python-argcomplete pipx)"
 eval "$(register-python-argcomplete3 pipx)"
 {{- end }}
 
-#Virtualenvwrapper stuff.
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Documents/projects/
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-{{- if eq .chezmoi.osRelease.id "arch" }}
-source /usr/bin/virtualenvwrapper.sh
-{{- else if (or (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-{{- else }}
-source ~/.local/bin/virtualenvwrapper.sh
-{{- end }}
 
 # Should point to nvim not alias
 export EDITOR=${NVIM_PATH}
