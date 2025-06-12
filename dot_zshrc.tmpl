@@ -77,7 +77,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting you-should-use web-search)
+plugins=(git tmux zsh-autosuggestions zsh-syntax-highlighting zsh-you-should-use)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -163,6 +163,14 @@ ipy () {
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+# Virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+{{- if eq .chezmoi.osRelease.id "arch" }}
+source /usr/bin/virtualenvwrapper.sh
+{{- else if eq .chezmoi.osRelease.id "ubuntu" }}
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+{{- end }}
+
 
 autoload -U bashcompinit
 bashcompinit
@@ -173,6 +181,7 @@ promptinit
 
 zstyle ':completion:*' menu select
 
+<<<<<<< HEAD
 
 {{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
 eval "$(register-python-argcomplete pipx)"
@@ -181,6 +190,8 @@ eval "$(register-python-argcomplete3 pipx)"
 {{- end }}
 
 
+=======
+>>>>>>> 55165b931aeacb50f6d7dbea0dfdc6442811395b
 # Should point to nvim not alias
 export EDITOR=${NVIM_PATH}
 {{- if eq .chezmoi.hostname "george" }}
