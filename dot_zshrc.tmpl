@@ -142,13 +142,6 @@ promptinit
 
 zstyle ':completion:*' menu select
 
-
-{{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
-eval "$(register-python-argcomplete pipx)"
-{{- else }}
-eval "$(register-python-argcomplete3 pipx)"
-{{- end }}
-
 # Should point to nvim not alias
 export EDITOR=${NVIM_PATH}
 {{- if eq .chezmoi.hostname "george" }}
