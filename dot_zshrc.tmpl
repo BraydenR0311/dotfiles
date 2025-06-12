@@ -130,47 +130,8 @@ alias sd='shutdown'
 alias visicon='ssh -X brayden@10.2.1.2'
 alias visiicon='ssh -X brayden@10.2.1.3'
 
-# Function for detecting and sourcing virtual environments.
-ve () {
-    if [[ $VIRTUAL_ENV ]]; then
-        echo "Already in virtual environment." >&2
-        return 1
-    fi
-
-    if [[ $1 ]]; then
-        workon $1
-        return
-    fi
-
-    PYTHON_VERSION=$(python --version | awk '{ print $2 }')
-
-    if [[ $(lsvirtualenv | grep ${PYTHON_VERSION}) ]]; then
-        workon $PYTHON_VERSION
-    else
-        mkvirtualenv $PYTHON_VERSION
-    fi
-}
-
-# Detect venv and if so, run ipython in interactive mode.
-ipy () {
-    if [[ -z $VIRTUAL_ENV ]]; then
-        echo "Activating virual environment."
-        ve 
-    fi
-    ipython -i
-}
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# Virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-{{- if eq .chezmoi.osRelease.id "arch" }}
-source /usr/bin/virtualenvwrapper.sh
-{{- else if eq .chezmoi.osRelease.id "ubuntu" }}
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-{{- end }}
-
 
 autoload -U bashcompinit
 bashcompinit
@@ -181,7 +142,6 @@ promptinit
 
 zstyle ':completion:*' menu select
 
-<<<<<<< HEAD
 
 {{- if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.hostname "mcdoobs-server") (eq .chezmoi.hostname "george")) }}
 eval "$(register-python-argcomplete pipx)"
@@ -189,9 +149,6 @@ eval "$(register-python-argcomplete pipx)"
 eval "$(register-python-argcomplete3 pipx)"
 {{- end }}
 
-
-=======
->>>>>>> 55165b931aeacb50f6d7dbea0dfdc6442811395b
 # Should point to nvim not alias
 export EDITOR=${NVIM_PATH}
 {{- if eq .chezmoi.hostname "george" }}
