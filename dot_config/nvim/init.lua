@@ -707,7 +707,7 @@ require("lazy").setup({
 			local servers = {
 				clangd = {},
 				-- gopls = {},
-				pyright = {
+				basedpyright = {
 					settings = {
 						python = {
 							venvPath = ".venv",
