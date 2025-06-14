@@ -177,7 +177,7 @@ vim.o.confirm = true
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<C-c>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
@@ -271,6 +271,7 @@ require("lazy").setup({
 		end,
 	},
 	"NMAC427/guess-indent.nvim", -- Detect tabstop and shiftwidth automatically
+	"xiyaowong/transparent.nvim",
 
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
@@ -893,7 +894,7 @@ require("lazy").setup({
 			completion = {
 				-- By default, you may press `<c-space>` to show the documentation.
 				-- Optionally, set `auto_show = true` to show the documentation after a delay.
-				documentation = { auto_show = false, auto_show_delay_ms = 500 },
+				documentation = { auto_show = true, auto_show_delay_ms = 500 },
 				list = { selection = { auto_insert = false, preselect = true } },
 			},
 
@@ -931,8 +932,9 @@ require("lazy").setup({
 			---@diagnostic disable-next-line: missing-fields
 			require("tokyonight").setup({
 				styles = {
-					comments = { italic = false }, -- Disable italics in comments
+					comments = { italic = true }, -- Disable italics in comments
 				},
+				transparent = true,
 			})
 
 			-- Load the colorscheme here.
