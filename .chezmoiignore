@@ -1,2 +1,5 @@
 README.md
 assets/
+{{- if eq .chezmoi.hostname "Lambda-Vector" }}
+.xprofile
+{{ end }}
