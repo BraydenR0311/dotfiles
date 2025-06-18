@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[user]
+  {{- if (and (eq .chezmoi.hostname "mcdoobs-laptop") (eq .chezmoi.hostname "mcdoobs-desktop")) }}
+	email = brayden.riesberg@aol.com
+  {{- else }}
+	email = brayden.j.riesberg@erdc.dren.mil
+  {{ end }}
+	name = brayden
