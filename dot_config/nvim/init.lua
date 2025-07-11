@@ -1001,12 +1001,6 @@ require("lazy").setup({
 			--  Check out: https://github.com/echasnovski/mini.nvim
 		end,
 	},
-	{
-		"mfussenegger/nvim-dap-python",
-		config = function()
-			require("dap-python").setup("uv")
-		end,
-	},
 
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
