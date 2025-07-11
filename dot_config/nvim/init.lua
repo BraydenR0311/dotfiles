@@ -717,8 +717,8 @@ require("lazy").setup({
 				basedpyright = {
 					settings = {
 						python = {
-							venvPath = ".venv",
-							pythonPath = ".venv/bin/python",
+							venvPath = "./.venv",
+							pythonPath = "./.venv/bin/python",
 						},
 					},
 				},
