@@ -164,17 +164,5 @@ return {
 			},
 		})
 		require("dap-python").setup("uv")
-		-- table.insert(dap.configurations.python, {
-		-- 	type = "python",
-		-- 	request = "launch",
-		-- 	name = "Launch current file (Simple PythonPath)",
-		-- 	program = "${file}",
-		-- 	args = { "-m", "debugpy.adapter" },
-		-- 	pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
-		-- 	cwd = vim.fn.getcwd(),
-		-- 	env = {
-		-- 		PYTHONPATH = vim.fn.getcwd(),
-		-- 	},
-		-- })
 	end,
 }
