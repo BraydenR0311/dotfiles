@@ -18,7 +18,7 @@ return {
 						command = { "zsh" },
 					},
 					python = {
-						command = { "ipython" }, -- or { "ipython", "--no-autoindent" }
+						command = { "uv", "run", "ipython" }, -- or { "ipython", "--no-autoindent" }
 						format = common.bracketed_paste,
 						block_dividers = { "# %%", "#%%" },
 					},
