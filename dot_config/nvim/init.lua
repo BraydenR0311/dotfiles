@@ -964,7 +964,7 @@ require("lazy").setup({
 		lazy = false,
 		config = function()
 			require("themery").setup({
-				themes = { "gruvbox", "catppuccin", "tokyonight", "everforest-nvim" },
+				themes = { "gruvbox", "catppuccin", "tokyonight", "everforest", "kanagawa" },
 			})
 		end,
 	},
