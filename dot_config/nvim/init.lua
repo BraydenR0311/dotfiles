@@ -960,6 +960,15 @@ require("lazy").setup({
 	},
 	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 	{
+		"zaldih/themery.nvim",
+		lazy = false,
+		config = function()
+			require("themery").setup({
+				-- add the config here
+			})
+		end,
+	},
+	{
 		"neanias/everforest-nvim",
 		version = false,
 		lazy = false,
