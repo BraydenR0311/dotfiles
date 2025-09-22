@@ -1098,4 +1098,4 @@ require("lazy").setup({
 vim.g.omni_sql_default_compl_type = "syntax"
 vim.g.ftplugin_sql_omni_key = "<C-b>"
 
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("gruvbox")
