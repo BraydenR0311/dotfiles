@@ -958,6 +958,7 @@ require("lazy").setup({
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 		end,
 	},
+	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 
 	-- Highlight todo, notes, etc in comments
 	{
