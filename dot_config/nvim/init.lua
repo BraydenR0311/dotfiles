@@ -964,7 +964,7 @@ require("lazy").setup({
 		lazy = false,
 		config = function()
 			require("themery").setup({
-				-- add the config here
+				themes = { "gruvbox" },
 			})
 		end,
 	},
