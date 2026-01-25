@@ -16,8 +16,9 @@ ubuntu_install() {
 }
 
 case "$ID" in
-	"arch") arch_install ;;
-	"ubuntu") ubuntu_install ;;
+	arch) arch_install ;;
+	ubuntu) ubuntu_install ;;
+	*) echo "No script for distribution '${ID}'"
 esac
 
 
