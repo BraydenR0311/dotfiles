@@ -150,12 +150,11 @@ export PATH="$PATH:/home/brayden/ngc-cli"
 source /opt/ros/humble/setup.zsh
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 {{- end }}
-{{- if eq .chezmoi.hostname "mcdoobs-laptop" }}
 export PATH="$PATH:$HOME/.dotnet/tools"
-{{- end }}
 
 # Install tools necessary for nvim.
 if ! which nvim > /dev/null 2>&1; then
 	echo "Neovim not found. Installing deps." 1>&2
 	~/.config/nvim/install-deps.sh
 fi
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
