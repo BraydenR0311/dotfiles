@@ -688,7 +688,14 @@ do
   local servers = {
     clangd = {},
     -- gopls = {},
-    pyright = {},
+    pyright = {
+      settings = {
+        python = {
+          venvPath = './.venv',
+          pythonPath = './.venv/bin/python',
+        },
+      },
+    },
     -- rust_analyzer = {},
     --
     -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -867,7 +874,7 @@ do
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 
     snippets = { preset = 'default' },
