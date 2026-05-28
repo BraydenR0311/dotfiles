@@ -149,6 +149,7 @@ export PATH="$PATH:/home/brayden/ngc-cli"
 source /opt/ros/humble/setup.zsh
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 {{- end }}
-{{- if eq .chezmoi.hostname "mcdoobs-laptop" }}
-export PATH="$PATH:$HOME/.dotnet/tools"
-{{- end }}
+
+unsetopt autocd
+export PATH=$HOME/.dotnet/tools:$PATH
+export DOTNET_ROOT=/usr/share/dotnet
