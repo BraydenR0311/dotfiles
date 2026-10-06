@@ -1,0 +1,11 @@
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sudo='sudo '
+alias vi="${NVIM_PATH}"
+alias bcon='bluetoothctl connect 04:9D:05:E4:EB:56'
+alias bdis='bluetoothctl disconnect'
+alias open='xdg-open'
+alias wifi='iwctl station wlan0'
+alias sd='shutdown'
+
