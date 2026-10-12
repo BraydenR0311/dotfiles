@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.hostname "mcdoobs-desktop-linux" }}
+{{ if (or (eq .chezmoi.hostname "mcdoobs-desktop-linux") (eq .chezmoi.hostname "mcdoobs-laptop-linux")) }}
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -64,7 +64,9 @@ unset color_prompt force_color_prompt
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+{{ if ne .chezmoi.hostname "mcdoobs-laptop-linux" }}
     alias ls='ls --color=auto'
+{{ end }}
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
