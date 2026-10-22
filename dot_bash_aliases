@@ -8,8 +8,11 @@ alias bdis='bluetoothctl disconnect'
 alias open='xdg-open'
 alias wifi='iwctl station wlan0'
 alias sd='shutdown'
-alias ipy='uvx --with pandas,numpy,seaborn,matplotlib,scipy ipython'
-alias py='uvx --with pandas,numpy,seaborn,matplotlib,scipy python'
+alias ipy='uvx ipython'
+alias py='uvx python'
+# with packages
+alias ipyp='uvx --with pandas,numpy,seaborn,matplotlib,scipy ipython'
+alias pyp='uvx --with pandas,numpy,seaborn,matplotlib,scipy python'
 
 # chezmoi
 alias cz='chezmoi'
